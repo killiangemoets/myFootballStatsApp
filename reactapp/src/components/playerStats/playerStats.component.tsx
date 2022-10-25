@@ -53,6 +53,7 @@ const PlayerStats: FC<PlayerStatsProps> = ({ stats }) => {
                 )}%)`
               : "%%%%%%%%%"}
             <div>Hellooo</div>
+            <div>Hellooo</div>
           </CrossesPercentage>
         </CrossesStats>
       </PlayerStatsElement>
