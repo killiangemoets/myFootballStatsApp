@@ -24,8 +24,8 @@ import { AppDispatch } from "../../store/store";
 
 const Inputs = () => {
   const allFormations = { value: "all", name: "All formations" };
-  const [teams, setTeams] = useState([] as Info[]);
-  const [formations, setFormations] = useState([allFormations] as Info[]);
+  const [teams, setTeams] = useState<Info[]>([]);
+  const [formations, setFormations] = useState<Info[]>([allFormations]);
   const directions = [
     { value: "left", name: "Left Crosses" },
     { value: "right", name: "Right Crosses" },

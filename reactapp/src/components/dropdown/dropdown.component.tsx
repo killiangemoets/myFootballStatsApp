@@ -17,11 +17,11 @@ const Dropdown: FC<DropdownProps> = ({
 }) => {
   return (
     <DropdownContainer>
-      {list.map((el, i) => {
+      {list.map((el) => {
         return (
           <Option
             current={el.value === current?.value ? true : false}
-            key={i}
+            key={el.value}
             onClick={() => {
               handler(el.value);
               closeDropdown();

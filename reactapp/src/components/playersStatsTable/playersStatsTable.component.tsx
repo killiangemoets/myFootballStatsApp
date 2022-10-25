@@ -21,7 +21,7 @@ import retrieve3BestCrossers, {
 const PlayersStatsTable = () => {
   const crosses = useSelector(selectCrosses);
   const isLoading = useSelector(selectCrossesIsLoading);
-  const [bestCrossers, setBestCrossers] = useState([] as Crosser[]);
+  const [bestCrossers, setBestCrossers] = useState<Crosser[]>([]);
 
   useEffect(() => {
     setBestCrossers(retrieve3BestCrossers(crosses));
@@ -50,8 +50,8 @@ const PlayersStatsTable = () => {
       ) : (
         <>
           {Boolean(crosses.length) ? (
-            bestCrossers.map((crosser, i) => {
-              return <PlayerStats key={i} stats={crosser} />;
+            bestCrossers.map((crosser) => {
+              return <PlayerStats key={crosser.id} stats={crosser} />;
             })
           ) : (
             <NoResult>No Result</NoResult>

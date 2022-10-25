@@ -35,11 +35,11 @@ const PlayerStats: FC<PlayerStatsProps> = ({ stats }) => {
         <CrossesStats>
           {stats.crossesSuccessful}
           <CrossesPercentage>
-            (
             {stats.crossesTotal
-              ? Math.trunc((stats.crossesSuccessful / stats.crossesTotal) * 100)
-              : 100}
-            %)
+              ? `(${Math.trunc(
+                  (stats.crossesSuccessful / stats.crossesTotal) * 100
+                )}%)`
+              : ""}
           </CrossesPercentage>
         </CrossesStats>
       </PlayerStatsElement>
@@ -47,11 +47,11 @@ const PlayerStats: FC<PlayerStatsProps> = ({ stats }) => {
         <CrossesStats>
           {stats.earlySuccessful}
           <CrossesPercentage>
-            (
             {stats.earlyTotal
-              ? Math.trunc((stats.earlySuccessful / stats.earlyTotal) * 100)
-              : 100}
-            %)
+              ? `(${Math.trunc(
+                  (stats.earlySuccessful / stats.earlyTotal) * 100
+                )}%)`
+              : ""}
           </CrossesPercentage>
         </CrossesStats>
       </PlayerStatsElement>
@@ -59,11 +59,9 @@ const PlayerStats: FC<PlayerStatsProps> = ({ stats }) => {
         <CrossesStats>
           {stats.midSuccessful}
           <CrossesPercentage>
-            (
             {stats.midTotal
-              ? Math.trunc((stats.midSuccessful / stats.midTotal) * 100)
-              : 100}
-            %)
+              ? `(${Math.trunc((stats.midSuccessful / stats.midTotal) * 100)}%)`
+              : ""}
           </CrossesPercentage>
         </CrossesStats>
       </PlayerStatsElement>
@@ -73,9 +71,9 @@ const PlayerStats: FC<PlayerStatsProps> = ({ stats }) => {
           <CrossesPercentage>
             (
             {stats.lateTotal
-              ? Math.trunc((stats.lateSuccessful / stats.lateTotal) * 100)
-              : 100}
-            %)
+              ? `${Math.trunc((stats.lateSuccessful / stats.lateTotal) * 100)}%`
+              : ""}
+            )
           </CrossesPercentage>
         </CrossesStats>
       </PlayerStatsElement>
