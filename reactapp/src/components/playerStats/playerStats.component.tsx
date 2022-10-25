@@ -51,8 +51,7 @@ const PlayerStats: FC<PlayerStatsProps> = ({ stats }) => {
               ? `(${Math.trunc(
                   (stats.earlySuccessful / stats.earlyTotal) * 100
                 )}%)`
-              : "%%%%%%%%%"}
-            <div>Hellooo</div>
+              : ""}
           </CrossesPercentage>
         </CrossesStats>
       </PlayerStatsElement>
