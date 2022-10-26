@@ -6,15 +6,19 @@ import { GlobalStyle } from "./global.style";
 
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "./store/store.ts";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  // <React.StrictMode>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
       <GlobalStyle />
       <App />
-    </Provider>
-  </React.StrictMode>
+    </PersistGate>
+  </Provider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

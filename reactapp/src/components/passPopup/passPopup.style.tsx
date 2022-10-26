@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const PopupContainer = styled.div`
   position: absolute;
-  top: 38%;
   width: 24rem;
-  right: 20%;
   display: flex;
   align-items: center;
   justify-content: center;

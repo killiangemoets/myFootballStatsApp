@@ -43,16 +43,18 @@ const Inputs = () => {
     const updateTeams = async () => {
       const teamsList = await getTeams();
       setTeams(teamsList);
-      dispatch(setCurrentTeam(teamsList[0]));
+      currentTeam || dispatch(setCurrentTeam(teamsList[0]));
     };
     updateTeams();
-    dispatch(setCurrentDirection(directions[0]));
+
+    currentDirection || dispatch(setCurrentDirection(directions[0]));
   }, []);
 
   useEffect(() => {
     const updateFormations = async (team: Info) => {
       const formationsList = await getFormations(team.value);
       setFormations([allFormations, ...formationsList]);
+      console.log(formationsList);
       dispatch(setCurrentFormation(allFormations));
     };
     if (currentTeam?.value) updateFormations(currentTeam);
