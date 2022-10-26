@@ -54,7 +54,6 @@ const Inputs = () => {
     const updateFormations = async (team: Info) => {
       const formationsList = await getFormations(team.value);
       setFormations([allFormations, ...formationsList]);
-      console.log(formationsList);
       dispatch(setCurrentFormation(allFormations));
     };
     if (currentTeam?.value) updateFormations(currentTeam);
