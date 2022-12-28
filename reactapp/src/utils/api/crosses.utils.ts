@@ -7,7 +7,7 @@ const getCrosses = async (
 ): Promise<Cross[]> => {
   try {
     const rawResponse = await fetch(
-      `https://myfootballstatsapp-production.up.railway.app/stats/crosses?team=${teamId}&formation=${formation}&direction=${direction}`
+      `https://my-football-stats-backend.onrender.com/stats/crosses?team=${teamId}&formation=${formation}&direction=${direction}`
     );
     const response = await rawResponse.json();
     return response.data.crosses;
